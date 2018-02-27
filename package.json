@@ -1,0 +1,21 @@
+{
+  "name": "jira-cli",
+  "version": "1.0.0-beta.1",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {},
+  "author": "lusarz",
+  "license": "MIT",
+  "bin": {
+    "jira": "bin/jira.js"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "clipboardy": "^1.2.2",
+    "colors": "^1.1.2",
+    "commander": "^2.13.0",
+    "jsonfile": "^4.0.0",
+    "moment": "^2.20.1"
+  }
+}
