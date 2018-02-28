@@ -3,6 +3,9 @@ Simple JIRA command line interface.
 
 Currently it mainly allow user to fetch issues. I'm open for suggestions how would you like to use this tool, and what kind of features may be interesting for you. Please report them in issues tab.
                                                                                                                                                                                       	.
+## Prerequisites
+NodeJS and NPM need to be installed.
+
 
 ## Install
 
