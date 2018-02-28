@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "test": "mocha test/**/*"
+  },
   "author": "lusarz",
   "license": "MIT",
   "bin": {
@@ -17,5 +19,9 @@
     "commander": "^2.13.0",
     "jsonfile": "^4.0.0",
     "moment": "^2.20.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.1"
   }
 }
