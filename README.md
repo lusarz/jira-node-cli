@@ -1,7 +1,7 @@
 ## About
-Simple jira command line interface. 
+Simple JIRA command line interface.
 
-It contains specific actions that I use in everyday work, so it may be not useful currently for everyone. Although I'm open for suggestion that would allow me to make this tool more comprehensive
+Currently it mainly allow user to fetch issues. I'm open for suggestions how would you like to use this tool, and what kind of features may be interesting for you. Please report them in issues tab.
                                                                                                                                                                                       	.
 
 ## Install
