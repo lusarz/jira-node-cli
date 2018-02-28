@@ -1,24 +1,17 @@
 #!/usr/bin/env node
 
 const program = require('commander');
-const fs = require('fs');
+const RequireUtils = require('../lib/utils/RequireUtils');
 
-function registerAction (action) {
-
-  const fn = params => {
-    new action(params).run();
-  };
-
-  program
-    .command(action.COMMAND)
-    .description(action.DESCRIPTION)
-    .action(fn)
-}
-
-fs
-  .readdirSync(__dirname + '/../lib/specific/actions')
+RequireUtils
+  .readAvailableActions()
   .forEach(file => {
-    registerAction(require('../lib/specific/actions/' + file.replace('.js', '')));
+    const { print, fetch, command, description } = RequireUtils.getAction(file);
+
+    program
+      .command(command)
+      .description(description)
+      .action(params => fetch(params).then(print))
   });
 
 program.parse(process.argv);
