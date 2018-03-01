@@ -9,7 +9,7 @@ NodeJS and NPM need to be installed.
 
 ## Install
 
-    npm install -g https://github.com/lusarz/jira-node-cli.git
+    npm install -g jira-node-cli
     
 ## Configure
 To configure you need to create `.jirarc` file in your home directory:
