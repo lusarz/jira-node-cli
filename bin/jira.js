@@ -12,7 +12,7 @@ RequireUtils
     program
       .command(ActionUtils.buildCommand(action, props))
       .description(description)
-      .action(params => fetch(params).then(print))
+      .action(params => fetch(params).then(print).catch(err => { console.log(err); }))
   });
 
 RequireUtils
@@ -24,7 +24,7 @@ RequireUtils
     program
       .command(alias)
       .description(description)
-      .action(() => fetch(props.map(prop => propsData[prop])).then(print))
+      .action(() => fetch(props.map(prop => propsData[prop])).then(print).catch(err => { console.log(err); }))
   });
 
 program.parse(process.argv);
