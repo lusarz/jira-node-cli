@@ -1,16 +1,10 @@
 {
-  "name": "jira-cli",
-  "version": "1.0.0-beta.1",
-  "description": "",
+  "name": "jira-node-cli",
+  "version": "1.0.0",
+  "description": "JIRA command line interface",
   "main": "index.js",
-  "private": true,
   "scripts": {
     "test": "mocha test/**/*"
-  },
-  "author": "lusarz",
-  "license": "MIT",
-  "bin": {
-    "jira": "bin/jira.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -23,5 +17,28 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.0.1"
+  },
+  "bin": {
+    "jira": "bin/jira.js"
+  },
+  "author": {
+    "name": "Łukasz Usarz",
+    "email": "lukasz.usarz@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jira",
+    "cli",
+    "node",
+    "issues",
+    "command",
+    "line"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lusarz/jira-node-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lusarz/jira-node-cli/issues"
   }
 }
