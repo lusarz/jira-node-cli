@@ -3,6 +3,12 @@
 const program = require('commander');
 const RequireUtils = require('../lib/utils/RequireUtils');
 const ActionUtils = require('../lib/utils/ActionUtils');
+const ConfigurationUtils = require('../lib/utils/ConfigurationUtils');
+
+if (!ConfigurationUtils.configurationFileExists()) {
+  console.log('Please create \'.jirarc\' configuration file in your home directory before run');
+  process.exit();
+}
 
 RequireUtils
   .readAvailableActions()
