@@ -1,6 +1,22 @@
 # JIRA CLI &nbsp; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Interesting%20JIRA%20Command%20Line%20Interface%20written%20in%20node&url=https://github.com/lusarz/jira-node-cli&hashtags=jira,cli,node)
 
-![jira-help](https://user-images.githubusercontent.com/10059264/37196293-906e922c-2376-11e8-8b20-1abc4cfe3c07.png)
+    Usage: jira [options] [command]
+
+    Options:
+
+      -h, --help                output usage information
+
+    Commands:
+
+      issue-link [issueName]    Copy issue link to clipboard
+      issue-status [issueName]  Show issue status
+      issue [issueName]         Show issue details
+      jql [jql]                 Show issues using JQL
+      all                       Show all issues
+      my-not-released           Show my not released issues
+      my-stage                  Show my deployed to stage issues
+      sprint                    Show current sprint issues
+      stage                     Show all deployed to stage issues
 
 ![jira-all](https://user-images.githubusercontent.com/10059264/37196314-a3a24e6a-2376-11e8-8711-5de5a1f353d0.png)
 
