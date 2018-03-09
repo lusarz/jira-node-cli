@@ -1,4 +1,4 @@
-## JIRA CLI.
+# JIRA CLI &nbsp; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Interesting%20JIRA%20Command%20Line%20Interface%20written%20in%20node&url=https://github.com/lusarz/jira-node-cli&hashtags=jira,cli,node)
 
 ![jira-help](https://user-images.githubusercontent.com/10059264/37196293-906e922c-2376-11e8-8b20-1abc4cfe3c07.png)
 
