@@ -1,4 +1,0 @@
-{
-  "TOKEN": "", // generated with: `echo -n user:password | base64`
-  "API_URL": ""
-}
