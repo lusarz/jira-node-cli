@@ -4,6 +4,7 @@ const program = require('commander');
 const RequireUtils = require('../lib/utils/RequireUtils');
 const ActionUtils = require('../lib/utils/ActionUtils');
 const ConfigurationUtils = require('../lib/utils/ConfigurationUtils');
+const AliasUtils = require('../lib/utils/AliasUtils');
 
 if (!ConfigurationUtils.configurationFileExists()) {
   ConfigurationUtils
@@ -17,31 +18,31 @@ if (!ConfigurationUtils.configurationFileExists()) {
 function runProgram () {
   RequireUtils
     .readAvailableActions()
-    .forEach(action => {
-      const { print, fetch, props, description } = RequireUtils.getAction(action);
+    .forEach(actionName => {
+      const action/*: Action*/ = RequireUtils.getAction(actionName);
 
       program
-        .command(ActionUtils.buildCommand(action, props))
-        .description(description)
+        .command(ActionUtils.buildCommand(actionName, action.props))
+        .description(action.description)
         .action(params =>
-          fetch(params)
-            .then(print)
+          action.fetch(params)
+            .then(action.print)
             .catch(err => { console.log(err); })
         );
     });
 
   RequireUtils
     .readAvailableAliases()
-    .forEach(alias => {
-      const { action, propsData, description } = RequireUtils.getAlias(alias);
-      const { print, fetch, props } = RequireUtils.getAction(action);
+    .forEach(aliasName => {
+      const alias/*: Alias*/ = RequireUtils.getAlias(aliasName);
+      const action/*: Action*/ = RequireUtils.getAction(alias.actionName);
 
       program
-        .command(alias)
-        .description(description)
+        .command(aliasName)
+        .description(AliasUtils.prepareDescription(alias, action))
         .action(() =>
-          fetch(props.map(prop => propsData[prop]))
-            .then(print)
+          action.fetch(AliasUtils.fillParameters(alias, action))
+            .then(action.print)
             .catch(err => { console.log(err); })
         );
     });

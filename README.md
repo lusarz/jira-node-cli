@@ -12,11 +12,12 @@
       issue-status [issueName]  Show issue status
       issue [issueName]         Show issue details
       jql [jql]                 Show issues using JQL
-      all                       Show all issues
-      my-not-released           Show my not released issues
-      my-stage                  Show my deployed to stage issues
-      sprint                    Show current sprint issues
-      stage                     Show all deployed to stage issues
+      all                       Alias => jira jql ''
+      my-not-released           Alias => jira jql 'status not in (Released) AND assignee in (currentUser()) ORDER BY status ASC'
+      my-stage                  Alias => jira jql 'status in ('Deployed to Stage') AND assignee in (currentUser()) ORDER BY status ASC'
+      sprint                    Alias => jira jql 'sprint in openSprints() ORDER BY status ASC'
+      stage                     Alias => jira jql 'status in ('Deployed to Stage') ORDER BY status ASC'
+
 
 ![jira-all](https://user-images.githubusercontent.com/10059264/37196314-a3a24e6a-2376-11e8-8711-5de5a1f353d0.png)
 

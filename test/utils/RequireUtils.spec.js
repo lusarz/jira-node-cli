@@ -9,6 +9,6 @@ describe('RequireUtils.readAvailableActions', () => {
 
 describe('RequireUtils.readAvailableAliases', () => {
   it('return all aliases', () => {
-    expect(RequireUtils.readAvailableAliases().sort()).to.deep.equal(['my-not-released', 'my-stage', 'sprint', 'stage']);
+    expect(RequireUtils.readAvailableAliases().sort()).to.deep.equal(['all', 'my-not-released', 'my-stage', 'sprint', 'stage']);
   });
 });
