@@ -21,7 +21,23 @@
 ![jira-all](https://user-images.githubusercontent.com/10059264/37196314-a3a24e6a-2376-11e8-8711-5de5a1f353d0.png)
 
 ![jira-issue](https://user-images.githubusercontent.com/10059264/37196325-b12e75c2-2376-11e8-9e20-4dcdbacde2cc.png)
-                                                                                                                                                               	.
+
+
+## Tips
+Commands like `jira all`, `jira my-not-released` are implemented as [aliases](https://github.com/lusarz/jira-node-cli/blob/master/lib/aliases/my-stage.js). I'm planning to allow user to create his own aliases but currently there is a few hardcoded, so you may meet error like:
+
+    JIRA respond with '400 Bad Request' status.
+    ERROR MESSAGE:
+    The value 'Released' does not exist for the field 'status'.
+    Please try again later
+                                                                                                                                                           	
+As a workaround please use plain `jira jql` queries, for example:
+    
+    jira jql 'project=ABC AND status in (New)'
+    jira jql 'assignee in (currentUser()) ORDER BY status ASC' 
+    jira jql 'project=XYZ AND assignee in (currentUser()) ORDER BY status ASC'                                                                                                                                                       	.
+
+
 ## Install
 
     npm install -g jira-node-cli
