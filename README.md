@@ -8,6 +8,7 @@
 
     Commands:
 
+      create-issue              Create new issue
       issue-link [issueName]    Copy issue link to clipboard
       issue-status [issueName]  Show issue status
       issue [issueName]         Show issue details
