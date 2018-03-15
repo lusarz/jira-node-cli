@@ -7,15 +7,14 @@ const ConfigurationUtils = require('../lib/utils/ConfigurationUtils');
 const AliasUtils = require('../lib/utils/AliasUtils');
 
 if (!ConfigurationUtils.configurationFileExists()) {
-  ConfigurationUtils
-    .promptUserForConfigurationProperties()
-    .then(ConfigurationUtils.saveConfiguration)
-    .then(runProgram);
+  ConfigurationUtils.setupConfigurationFile()
 } else {
+  registerActions();
+  registerAliases();
   runProgram();
 }
 
-function runProgram () {
+function registerActions () {
   RequireUtils
     .readAvailableActions()
     .forEach(actionName => {
@@ -24,13 +23,11 @@ function runProgram () {
       program
         .command(ActionUtils.buildCommand(actionName, action.props))
         .description(action.description)
-        .action(params =>
-          action.fetch(params)
-            .then(action.print)
-            .catch(err => { console.log(err); })
-        );
+        .action(params => action.run(params).catch(console.error));
     });
+}
 
+function registerAliases () {
   RequireUtils
     .readAvailableAliases()
     .forEach(aliasName => {
@@ -40,15 +37,11 @@ function runProgram () {
       program
         .command(aliasName)
         .description(AliasUtils.prepareDescription(alias, action))
-        .action(() =>
-          action.fetch(AliasUtils.fillParameters(alias, action))
-            .then(action.print)
-            .catch(err => { console.log(err); })
-        );
+        .action(() => action.run(AliasUtils.fillParameters(alias, action)).catch(console.error));
     });
+}
 
+function runProgram() {
   program.parse(process.argv);
-  if (!program.args.length) {
-    program.help();
-  }
+  if (!program.args.length) program.help();
 }
