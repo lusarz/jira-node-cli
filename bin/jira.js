@@ -17,11 +17,9 @@ if (!ConfigurationUtils.configurationFileExists()) {
 function registerActions () {
   RequireUtils
     .readAvailableActions()
-    .forEach(actionName => {
-      const action/*: Action*/ = RequireUtils.getAction(actionName);
-
+    .forEach(action/*: Action*/ => {
       program
-        .command(ActionUtils.buildCommand(actionName, action.props))
+        .command(ActionUtils.buildCommand(action.name, action.props))
         .description(action.description)
         .action(params => action.run(params).catch(console.error));
     });
@@ -30,12 +28,9 @@ function registerActions () {
 function registerAliases () {
   RequireUtils
     .readAvailableAliases()
-    .forEach(aliasName => {
-      const alias/*: Alias*/ = RequireUtils.getAlias(aliasName);
-      const action/*: Action*/ = RequireUtils.getAction(alias.actionName);
-
+    .forEach(({ alias/*: Alias*/, action/*: Action*/ }) => {
       program
-        .command(aliasName)
+        .command(alias.name)
         .description(AliasUtils.prepareDescription(alias, action))
         .action(() => action.run(AliasUtils.fillParameters(alias, action)).catch(console.error));
     });
