@@ -3,18 +3,16 @@ const RequireUtils = require('../../lib/utils/RequireUtils');
 
 RequireUtils
   .readAvailableAliases()
-  .forEach(aliasName => {
-    describe('Alias: ' + aliasName, () => {
-      const { description, actionName, propsData } = RequireUtils.getAlias(aliasName);
-      const action = RequireUtils.getAction(actionName);
+  .forEach(({ alias, action }) => {
+    describe('Alias: ' + alias.name, () => {
 
       it('has description, action and propsData', () => {
-        expect(propsData).to.be.an('object');
-        expect(actionName).to.be.a('string');
+        expect(alias.propsData).to.be.an('object');
+        expect(alias.actionName).to.be.a('string');
       });
 
-      it(`every prop from ${actionName} action should be defined in propsData`, () => {
-        expect(Object.getOwnPropertyNames(propsData).sort()).to.deep.equal(action.props.sort());
+      it(`every prop from ${alias.actionName} action should be defined in propsData`, () => {
+        expect(Object.getOwnPropertyNames(alias.propsData).sort()).to.deep.equal(action.props.sort());
       });
     });
   });

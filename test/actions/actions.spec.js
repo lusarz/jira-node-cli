@@ -6,12 +6,11 @@ RequireUtils
   .forEach(action => {
     describe('Action: ' + action, () => {
       it(`has name, description, props array, print method and fetch method`, () => {
-        const { name, run, props, description } = RequireUtils.getAction(action);
 
-        expect(run).to.be.an('function');
-        expect(props).to.be.an('array');
-        expect(description).to.be.a('string');
-        expect(name).to.be.a('string');
+        expect(action.run).to.be.an('function');
+        expect(action.props).to.be.an('array');
+        expect(action.description).to.be.a('string');
+        expect(action.name).to.be.a('string');
       });
     });
   });
