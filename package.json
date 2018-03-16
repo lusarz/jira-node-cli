@@ -4,8 +4,9 @@
   "description": "JIRA command line interface",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**/*",
-    "coverage": "nyc --reporter=lcov mocha test/**/*"
+    "test:unit": "mocha test/**/*",
+    "test": "nyc --reporter=text mocha test/**/*",
+    "check-coverage": "nyc check-coverage"
   },
   "dependencies": {
     "axios": "^0.17.1",
