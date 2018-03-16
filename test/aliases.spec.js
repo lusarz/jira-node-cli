@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const RequireUtils = require('../../lib/utils/RequireUtils');
+const RequireUtils = require('../lib/utils/require-utils');
 
 RequireUtils
   .readAvailableAliases()

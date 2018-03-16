@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const ActionUtils = require('../../lib/utils/ActionUtils');
+const ActionUtils = require('../lib/utils/action-utils');
 
 describe('ActionUtils.buildCommand', () => {
   it('return properly formatted command that may be registered in commander', () => {

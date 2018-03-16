@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 const program = require('commander');
-const RequireUtils = require('../lib/utils/RequireUtils');
-const ActionUtils = require('../lib/utils/ActionUtils');
-const ConfigurationUtils = require('../lib/utils/ConfigurationUtils');
-const AliasUtils = require('../lib/utils/AliasUtils');
+const RequireUtils = require('../lib/utils/require-utils');
+const ActionUtils = require('../lib/utils/action-utils');
+const ConfigurationUtils = require('../lib/utils/configuration-utils');
+const AliasUtils = require('../lib/utils/alias-utils');
 
 if (!ConfigurationUtils.configurationFileExists()) {
   ConfigurationUtils.setupConfigurationFile()

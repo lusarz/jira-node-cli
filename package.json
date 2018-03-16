@@ -4,8 +4,8 @@
   "description": "JIRA command line interface",
   "main": "index.js",
   "scripts": {
-    "test:unit": "mocha test/**/*",
-    "test": "nyc --reporter=text mocha test/**/*",
+    "test:unit": "mocha",
+    "test": "nyc --reporter=text mocha",
     "check-coverage": "nyc check-coverage"
   },
   "dependencies": {
