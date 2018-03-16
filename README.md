@@ -1,4 +1,4 @@
-# JIRA CLI &nbsp; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Interesting%20JIRA%20Command%20Line%20Interface%20written%20in%20node&url=https://github.com/lusarz/jira-node-cli&hashtags=jira,cli,node)
+# JIRA CLI &nbsp; [![Build Status](https://circleci.com/gh/lusarz/jira-node-cli/tree/master.png?style=shield)](https://circleci.com/gh/lusarz/jira-node-cli) &nbsp; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Interesting%20JIRA%20Command%20Line%20Interface%20written%20in%20node&url=https://github.com/lusarz/jira-node-cli&hashtags=jira,cli,node)
 
     Usage: jira [options] [command]
 
