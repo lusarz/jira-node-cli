@@ -6,7 +6,7 @@
   "scripts": {
     "test:unit": "mocha",
     "test": "nyc --reporter=text mocha",
-    "check-coverage": "nyc check-coverage"
+    "check-coverage": "nyc check-coverage --lines 51"
   },
   "dependencies": {
     "axios": "^0.17.1",
