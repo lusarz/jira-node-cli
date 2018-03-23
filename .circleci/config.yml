@@ -29,3 +29,4 @@ jobs:
       # run tests!
       - run: yarn test
       - run: yarn check-coverage
+      - run: yarn lint

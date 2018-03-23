@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "no-undef": 0,
+    "no-console": 0
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6
+  }
+}
