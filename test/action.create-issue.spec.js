@@ -17,13 +17,17 @@ describe('When user want to create an issue', () => {
 });
 
 describe('When user invoke create-issue action', () => {
+  let sandbox;
   before(() => {
-    sinon.stub(ProjectsInquirer, 'chooseProject').resolves(6);
-    sinon.stub(IssuesInquirer, 'getIssueParameters').resolves(ISSUE_PARAMETERS);
-    sinon.stub(IssuesDAO, 'createIssue').resolves({ key: 'ABC-16'});
-    sinon.stub(PrintUtils, 'printLine');
+    sandbox = sinon.sandbox.create();
+    sandbox.stub(ProjectsInquirer, 'chooseProject').resolves(6);
+    sandbox.stub(IssuesInquirer, 'getIssueParameters').resolves(ISSUE_PARAMETERS);
+    sandbox.stub(IssuesDAO, 'createIssue').resolves({ key: 'ABC-16'});
+    sandbox.stub(PrintUtils, 'printLine');
     CreateIssueAction.run();
   });
+
+  after(() => { sandbox.restore() });
 
   it('choose issue type for project chosen project', () => {
     sinon.assert.calledWith(IssuesInquirer.getIssueParameters, 6);

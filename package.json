@@ -6,7 +6,7 @@
   "scripts": {
     "test:unit": "mocha",
     "test": "nyc --reporter=text mocha",
-    "check-coverage": "nyc check-coverage --lines 51",
+    "check-coverage": "nyc check-coverage --lines 62",
     "lint": "eslint . --ext js"
   },
   "dependencies": {
