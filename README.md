@@ -14,6 +14,7 @@
       issue [issueName]         Show issue details
       jql [jql]                 Show issues using JQL
       all                       Alias => jira jql ''
+      my-issues                 Alias => jira jql 'assignee in (currentUser()) ORDER BY status ASC'
       my-not-released           Alias => jira jql 'status not in (Released) AND assignee in (currentUser()) ORDER BY status ASC'
       my-stage                  Alias => jira jql 'status in ('Deployed to Stage') AND assignee in (currentUser()) ORDER BY status ASC'
       sprint                    Alias => jira jql 'sprint in openSprints() ORDER BY status ASC'
