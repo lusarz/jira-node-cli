@@ -5,4 +5,5 @@ export default interface Issue {
     summary: string;
     summaryColor: string;
     assignee: string;
+    link: string;
 };
