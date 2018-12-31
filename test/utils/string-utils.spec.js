@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const StringUtils = require('../lib/utils/string-utils');
+const StringUtils = require('../../lib/utils/string-utils');
 
 describe('StringUtils.fillWithSpaces', () => {
   it('return properly formatted text', () => {

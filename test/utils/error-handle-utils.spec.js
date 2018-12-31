@@ -1,7 +1,7 @@
 const sinon = require('sinon');
 
-const ErrorHandleUtils = require('../lib/utils/error-handle-utils');
-const ErrorPrintUtils = require('../lib/utils/error-print-utils');
+const ErrorHandleUtils = require('../../lib/utils/error-handle-utils');
+const ErrorPrintUtils = require('../../lib/utils/error-print-utils');
 
 describe('When error not contains response', () => {
 

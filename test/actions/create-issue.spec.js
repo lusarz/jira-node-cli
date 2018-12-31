@@ -1,14 +1,14 @@
 const expect = require('chai').expect;
 const sinon = require('sinon');
 
-const CreateIssueAction/*:Action*/ = require('../lib/actions/create-issue');
+const CreateIssueAction/*:Action*/ = require('../../lib/actions/create-issue');
 
-const IssuesDAO = require('../lib/dao/issues-dao');
-const ProjectsInquirer = require('../lib/inquirer/projects-inquirer');
-const IssuesInquirer = require('../lib/inquirer/issues-inquirer');
-const PrintUtils = require('../lib/utils/print-utils');
+const IssuesDAO = require('../../lib/dao/issues-dao');
+const ProjectsInquirer = require('../../lib/inquirer/projects-inquirer');
+const IssuesInquirer = require('../../lib/inquirer/issues-inquirer');
+const PrintUtils = require('../../lib/utils/print-utils');
 
-const ISSUE_PARAMETERS = require('./fixtures/issue-parameters');
+const ISSUE_PARAMETERS = require('../fixtures/issue-parameters');
 
 describe('When user want to create an issue', () => {
   it(`don't need to provide any parameters`, () => {

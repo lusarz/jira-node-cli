@@ -1,8 +1,8 @@
 const sinon = require('sinon');
 
-const IssueStatusAction/*:Action*/ = require('../lib/actions/issue-status');
-const IssuesDAO = require('../lib/dao/issues-dao');
-const IssuesPrinter = require('../lib/printer/issues-printer');
+const IssueAction/*:Action*/ = require('../../lib/actions/issue');
+const IssuesDAO = require('../../lib/dao/issues-dao');
+const IssuesPrinter = require('../../lib/printer/issues-printer');
 
 let sandbox;
 
@@ -10,8 +10,8 @@ describe('When user invoke issue-status action', () => {
   before(() => {
     sandbox = sinon.sandbox.create();
     sandbox.stub(IssuesDAO, 'findIssueByName').resolves({ key: 'ABC-1' });
-    sandbox.spy(IssuesPrinter, 'printIssueStatus');
-    IssueStatusAction.run('ABC-1');
+    sandbox.spy(IssuesPrinter, 'printIssueDetails');
+    IssueAction.run('ABC-1');
   });
 
   after(() => { sandbox.restore() });
@@ -21,6 +21,6 @@ describe('When user invoke issue-status action', () => {
   });
 
   it('issue status should be printed', () => {
-    sinon.assert.calledWith(IssuesPrinter.printIssueStatus, { key: 'ABC-1' });
+    sinon.assert.calledWith(IssuesPrinter.printIssueDetails, { key: 'ABC-1' });
   });
 });

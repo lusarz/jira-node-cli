@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const AliasUtils = require('../lib/utils/alias-utils');
+const AliasUtils = require('../../lib/utils/alias-utils');
 
 describe('Alias command description', () => {
   const alias/*: Alias*/ = {

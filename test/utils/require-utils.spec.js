@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const RequireUtils = require('../lib/utils/require-utils');
+const RequireUtils = require('../../lib/utils/require-utils');
 
 describe('RequireUtils.readAvailableActions', () => {
   it('return all actions', () => {

@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const ConfigurationUtils = require('../lib/utils/configuration-utils');
+const ConfigurationUtils = require('../../lib/utils/configuration-utils');
 
 describe('Configuration', () => {
   it('should be stored in .jirarc file', () => {

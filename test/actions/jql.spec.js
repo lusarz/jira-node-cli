@@ -1,8 +1,8 @@
 const sinon = require('sinon');
 
-const JQLAction/*:Action*/ = require('../lib/actions/jql');
-const IssuesDAO = require('../lib/dao/issues-dao');
-const IssuesPrinter = require('../lib/printer/issues-printer');
+const JQLAction/*:Action*/ = require('../../lib/actions/jql');
+const IssuesDAO = require('../../lib/dao/issues-dao');
+const IssuesPrinter = require('../../lib/printer/issues-printer');
 
 let sandbox;
 

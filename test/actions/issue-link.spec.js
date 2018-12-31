@@ -1,7 +1,7 @@
 const sinon = require('sinon');
 
-const IssueLinkAction/*:Action*/ = require('../lib/actions/issue-link');
-const ConfigurationUtils = require('../lib/utils/configuration-utils');
+const IssueLinkAction/*:Action*/ = require('../../lib/actions/issue-link');
+const ConfigurationUtils = require('../../lib/utils/configuration-utils');
 const clipboardy = require('clipboardy');
 
 describe('When user invoke issue-link action', () => {
