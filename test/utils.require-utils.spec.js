@@ -17,6 +17,6 @@ describe('RequireUtils.readAvailableAliases', () => {
       .readAvailableAliases()
       .map(({ alias }) => alias.name)
       .sort()
-    ).to.deep.equal(['all', 'my-not-released', 'my-stage', 'sprint', 'stage']);
+    ).to.deep.equal(['all', 'my-issues', 'my-not-released', 'my-stage', 'sprint', 'stage']);
   });
 });
