@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const RequireUtils = require('../../lib/utils/require-utils');
 
 describe('RequireUtils.readAvailableActions', () => {

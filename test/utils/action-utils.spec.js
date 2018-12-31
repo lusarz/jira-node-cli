@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const ActionUtils = require('../../lib/utils/action-utils');
 
 describe('ActionUtils.buildCommand', () => {

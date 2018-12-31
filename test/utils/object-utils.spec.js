@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const ObjectUtils = require('../../lib/utils/object-utils');
 
 describe('ObjectUtils.readPropertyDeeply function', () => {

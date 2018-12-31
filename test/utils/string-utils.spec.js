@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const StringUtils = require('../../lib/utils/string-utils');
 
 describe('StringUtils.fillWithSpaces', () => {

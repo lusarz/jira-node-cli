@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const ConfigurationUtils = require('../../lib/utils/configuration-utils');
 
 describe('Configuration', () => {
