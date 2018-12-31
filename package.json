@@ -40,6 +40,9 @@
     "command",
     "line"
   ],
+  "engines": {
+    "node": ">= 8"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/lusarz/jira-node-cli.git"
