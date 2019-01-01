@@ -6,7 +6,7 @@ describe('RequireUtils.readAvailableActions', () => {
       .readAvailableActions()
       .map(action => action.name)
       .sort()
-    ).to.deep.equal(['create-issue', 'issue', 'issue-link', 'issue-status', 'jql']);
+    ).to.deep.equal(['create-issue', 'issue', 'issue-link', 'issue-status', 'jql', 'open']);
   });
 });
 
