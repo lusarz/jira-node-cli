@@ -10,7 +10,7 @@
     "lint": "eslint . --ext js"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.19.0",
     "clipboardy": "^1.2.2",
     "colors": "^1.1.2",
     "commander": "^2.13.0",
